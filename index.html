@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <button id="new-book">Add Book</button>
+    <div class="modal hidden">
+        <div class="modal-content">
+            <form>
+                <button type="button" id="close"></button>
+                <input type="text" id="title" name="title" placeholder="Title" required>
+                <input type="text" id="author" name="author" placeholder="Author" required>
+                <input type="number" id="pages" name="pages" placeholder="Pages" required>
+                <label for="read">Have you read this book?</label>
+                    <input type="checkbox" id="read" name="read">
+                <button type="submit" id="add-book">Add book</button>
+            </form>
+        </div>
+    </div>
+    <div class="books"></div>
+    <script src="./script.js"></script>
+</body>
+</html>
