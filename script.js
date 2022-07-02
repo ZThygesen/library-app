@@ -6,9 +6,6 @@ function Book(title, author, pages, read, color) {
     this.pages = pages;
     this.read = read;
     this.color = color;
-    this.info = function() {
-        console.log(`${title} by ${author}, ${pages} pages, ${read ? "read" : "not read yet"}`);
-    }
 }
 
 // receives and stores input
@@ -42,7 +39,6 @@ form.addEventListener('submit', (e) => addBookToLibrary(e));
 function addBookToLibrary(e) {
     e.preventDefault();
     if (titleInput.value === '' || authorInput === '' || pagesInput.value === '') {
-        console.log(myLibrary);
         return;
     }
     let book = new Book(titleInput.value, authorInput.value, pagesInput.value, readInput.checked, `url(${newBg})`);
@@ -124,7 +120,14 @@ function removeBook() {
 }
 
 // local storage for books
-myLibrary = Array.from(JSON.parse(localStorage.getItem('library')));
-console.log(myLibrary);
 
+function checkLocalStorage() {
+    if (localStorage.getItem('library')) {
+        myLibrary = JSON.parse(localStorage.getItem('library'))
+    } else {
+        myLibrary = [];
+    }
+}
+
+checkLocalStorage();
 displayBooks();
