@@ -25,6 +25,7 @@ let newBg = '';
 
 // modal functionality
 let modal = document.querySelector('.modal');
+let modalBg = document.querySelector('.modal-content');
 let callModal = document.querySelector('#new-book');
 callModal.addEventListener('click', () => {
     modal.classList.remove('hidden');
