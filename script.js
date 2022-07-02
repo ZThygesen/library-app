@@ -124,6 +124,7 @@ function removeBook() {
 }
 
 // local storage for books
-myLibrary = JSON.parse(localStorage.getItem('library'));
+myLibrary = Array.from(JSON.parse(localStorage.getItem('library')));
+console.log(myLibrary);
 
 displayBooks();
