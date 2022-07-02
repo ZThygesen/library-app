@@ -1,6 +1,50 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(211, 211, 211);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(124, 124, 124);
+    border-bottom: 2px solid #000;
+}
+
+.header {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    max-width: 1000px;
+}
+
+.header button {
+    align-self: center;
+    height: 50px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(211, 211, 211);
+    border-style: none;
+    border-radius: 15px;
+    padding: 5px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    border: 1px solid #000;
+    transition: all 0.3s;
+}
+
+.header button:hover {
+    transform: scale(1.1);
 }
 
 .modal {
@@ -9,9 +53,8 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1;
-    width: 100%;
-    height: 100%;
-    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    width: 100vw;
+    height: 100vh;
 }
 
 .modal-content {
@@ -23,7 +66,6 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    margin-left: 90px;
 }
 
 form {
@@ -34,7 +76,8 @@ form {
     gap: 15px;
     border-radius: 12% 0 0 12%;
     padding: 100px;
-    margin-right: 90px;
+    margin-left: 70px;
+    margin-bottom: 80px;
     color: #fff;
 }
 
@@ -126,15 +169,74 @@ input:hover {
 }
 
 .books {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 200px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+    padding: 50px;
 }
 
 .book {
+    width: 300px;
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-image: url(./images/book4.svg);
+}
+
+.book i {
+    position: absolute;
+    left: 30px;
+    top: 50px;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.book i:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.info {
+    color: #fff;
+    max-width: 180px;
+    text-align: center;
+    margin: 15px 0 85px 75px;
+    word-wrap: break-word;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-evenly;
 }
+
+.info label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.info #read {
+    margin: 0;
+}
+
+.book p {
+    margin: 0;
+}
+
+.info :first-child {
+    font-size: 22px;
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+.info :nth-child(2) {
+    font-weight: 800;
+    font-size: 20px;
+}
+
 
 .hidden {
     display: none;
