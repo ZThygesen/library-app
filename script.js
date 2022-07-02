@@ -67,7 +67,7 @@ function createBook(i) {
 
     let removeIcon = document.createElement('i');
     removeIcon.addEventListener('click', removeBook);
-    removeIcon.className = `fa-solid fa-trash-can fa-2x ${i}`;
+    removeIcon.className = 'fa-solid fa-trash-can fa-2x';
     newBook.append(removeIcon);
 
     let info = document.createElement('div');
@@ -78,6 +78,7 @@ function createBook(i) {
     let pages = document.createElement('p');
     let read = document.createElement('label');
     let input = document.createElement('input');
+    input.addEventListener('click', toggleStatus);
 
     title.textContent = myLibrary[i].title;
     author.textContent = myLibrary[i].author;
@@ -102,6 +103,12 @@ function createBook(i) {
     return newBook;
 }
 
+function toggleStatus() {
+    let index = this.parentElement.parentElement.parentElement.classList[1];
+    myLibrary[index].read = !myLibrary[index].read;
+    localStorage.setItem('library', JSON.stringify(myLibrary));
+}
+
 // resets form
 function resetForm() {
     titleInput.value = '';
@@ -114,7 +121,7 @@ function resetForm() {
 
 // removed a book from the library
 function removeBook() {
-    myLibrary.splice(this.classList[3], 1);
+    myLibrary.splice(this.parentElement.classList[1], 1);
     localStorage.setItem('library', JSON.stringify(myLibrary));
     displayBooks();
 }
