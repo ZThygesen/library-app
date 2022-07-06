@@ -1,11 +1,13 @@
 let myLibrary = [];
 
-function Book(title, author, pages, read, color) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.color = color;
+class Book {
+    constructor (title, author, pages, read, color) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.color = color;
+    }
 }
 
 // receives and stores input
